@@ -1,0 +1,681 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4F46E5;
+    --secondary-color: #10B981;
+    --accent-color: #F59E0B;
+    --text-dark: #1F2937;
+    --text-light: #6B7280;
+    --bg-white: #FFFFFF;
+    --bg-gray: #F9FAFB;
+    --bg-light: #F3F4F6;
+    --border-color: #E5E7EB;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.8;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--bg-white);
+    border-radius: 20px;
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.header h1 i {
+    font-size: 2.8rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    line-height: 1.7;
+    opacity: 0.95;
+    max-width: 750px;
+    margin: 0 auto;
+    word-break: keep-all;
+}
+
+/* Table of Contents */
+.toc {
+    background: var(--bg-light);
+    padding: 30px 40px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.toc h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toc ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.toc li {
+    margin: 0;
+}
+
+.toc a {
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.toc a:hover {
+    background: white;
+    color: var(--primary-color);
+    transform: translateX(5px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Main Content */
+.content {
+    padding: 40px;
+}
+
+/* AI Section */
+.ai-section {
+    margin-bottom: 50px;
+    scroll-margin-top: 20px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    word-break: keep-all;
+}
+
+.section-header h2 i {
+    color: var(--primary-color);
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-premium {
+    background: linear-gradient(135deg, #F59E0B, #EF4444);
+    color: white;
+}
+
+.badge-korea {
+    background: linear-gradient(135deg, #10B981, #059669);
+    color: white;
+}
+
+.badge-developer {
+    background: linear-gradient(135deg, #6366F1, #4F46E5);
+    color: white;
+}
+
+.badge-opensource {
+    background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+    color: white;
+}
+
+/* Intro */
+.intro {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    margin-bottom: 25px;
+    font-style: italic;
+    line-height: 1.75;
+    word-break: keep-all;
+}
+
+/* Feature Boxes */
+.feature-box,
+.limitation-box,
+.benefit-box {
+    background: var(--bg-gray);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.feature-box.highlight {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.05));
+    border-left-color: var(--secondary-color);
+}
+
+.limitation-box {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(220, 38, 38, 0.02));
+    border-left-color: #EF4444;
+}
+
+.benefit-box {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.05));
+    border-left-color: var(--accent-color);
+}
+
+.feature-box h3,
+.limitation-box h3,
+.benefit-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-box h3 i,
+.limitation-box h3 i,
+.benefit-box h3 i {
+    color: var(--primary-color);
+}
+
+.limitation-box h3 i {
+    color: #EF4444;
+}
+
+.benefit-box h3 i {
+    color: var(--accent-color);
+}
+
+.feature-box p,
+.limitation-box p,
+.benefit-box p {
+    color: var(--text-dark);
+    line-height: 1.85;
+    margin-bottom: 10px;
+    word-break: keep-all;
+}
+
+/* Feature Lists */
+.feature-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.feature-list li {
+    padding: 10px 0;
+    color: var(--text-dark);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.8;
+    word-break: keep-all;
+}
+
+.feature-list li i {
+    color: var(--primary-color);
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.feature-list strong {
+    color: var(--text-dark);
+}
+
+/* Recommendations Section */
+.recommendations {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(99, 102, 241, 0.02));
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.recommendation-grid {
+    display: grid;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.recommendation-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.recommendation-card h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.recommendation-list {
+    list-style: none;
+}
+
+.recommendation-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-dark);
+}
+
+.recommendation-list li:last-child {
+    border-bottom: none;
+}
+
+.recommendation-list strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Tips Section */
+.tips {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(5, 150, 105, 0.02));
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.tip-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.tip-number {
+    position: absolute;
+    top: -15px;
+    right: 15px;
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(79, 70, 229, 0.1);
+    line-height: 1;
+}
+
+.tip-card h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.tip-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Conclusion */
+.conclusion {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.05));
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 40px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.conclusion p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--text-dark);
+    word-break: keep-all;
+}
+
+/* Footer */
+.footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 25px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 8px;
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+    .container {
+        border-radius: 10px;
+    }
+
+    .header {
+        padding: 30px 20px;
+    }
+
+    .header h1 {
+        font-size: 1.6rem;
+        flex-direction: column;
+        gap: 10px;
+        line-height: 1.3;
+    }
+
+    .header h1 i {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .toc {
+        padding: 20px 18px;
+    }
+
+    .toc h3 {
+        font-size: 1.15rem;
+    }
+
+    .toc ul {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .toc a {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .content {
+        padding: 20px 18px;
+    }
+
+    .ai-section {
+        margin-bottom: 40px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 18px;
+    }
+
+    .section-header h2 {
+        font-size: 1.4rem;
+        line-height: 1.4;
+        word-break: keep-all;
+    }
+
+    .section-header h2 i {
+        font-size: 1.3rem;
+    }
+
+    .badge {
+        font-size: 0.75rem;
+        padding: 4px 12px;
+    }
+
+    .intro {
+        font-size: 0.98rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .feature-box,
+    .limitation-box,
+    .benefit-box {
+        padding: 18px;
+        margin-bottom: 16px;
+        border-radius: 10px;
+    }
+
+    .feature-box h3,
+    .limitation-box h3,
+    .benefit-box h3 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+        line-height: 1.4;
+        word-break: keep-all;
+    }
+
+    .feature-box h3 i,
+    .limitation-box h3 i,
+    .benefit-box h3 i {
+        font-size: 1rem;
+    }
+
+    .feature-box p,
+    .limitation-box p,
+    .benefit-box p {
+        font-size: 0.95rem;
+        line-height: 1.85;
+        word-break: keep-all;
+    }
+
+    .feature-list {
+        margin-top: 12px;
+    }
+
+    .feature-list li {
+        padding: 12px 0;
+        font-size: 0.95rem;
+        line-height: 1.8;
+        gap: 10px;
+    }
+
+    .feature-list li i {
+        margin-top: 3px;
+        font-size: 0.9rem;
+    }
+
+    .recommendations,
+    .tips {
+        padding: 20px 18px;
+        margin-bottom: 30px;
+    }
+
+    .recommendation-card,
+    .tip-card {
+        padding: 20px;
+    }
+
+    .recommendation-card h3 {
+        font-size: 1.15rem;
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
+
+    .recommendation-list li {
+        padding: 12px 0;
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .tip-card h3 {
+        font-size: 1.05rem;
+        line-height: 1.4;
+    }
+
+    .tip-card p {
+        font-size: 0.93rem;
+        line-height: 1.8;
+    }
+
+    .tip-number {
+        font-size: 3rem;
+        top: -10px;
+        right: 10px;
+    }
+
+    .recommendation-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .conclusion {
+        padding: 20px 18px;
+        margin-top: 30px;
+    }
+
+    .conclusion p {
+        font-size: 0.98rem;
+        line-height: 1.85;
+        word-break: keep-all;
+    }
+
+    .footer {
+        padding: 20px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .header {
+        padding: 25px 18px;
+    }
+
+    .header h1 {
+        font-size: 1.4rem;
+    }
+
+    .header h1 i {
+        font-size: 1.7rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .toc {
+        padding: 18px 15px;
+    }
+
+    .content {
+        padding: 18px 15px;
+    }
+
+    .section-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .feature-box,
+    .limitation-box,
+    .benefit-box {
+        padding: 16px;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4338CA;
+}
